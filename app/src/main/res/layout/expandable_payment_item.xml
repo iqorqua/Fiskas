@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:divider="#bdbdbd"
+    android:dividerHeight="3.0sp"
+    android:focusable="false"
+    android:focusableInTouchMode="false"
+    android:headerDividersEnabled="false"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/expand_button"
+        style="@style/TextAppearance.AppCompat.Medium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="-20dp"
+        android:drawableLeft="@drawable/ic_image_aspect_ratio_white_24dp"
+        android:elevation="6dp"
+        android:foreground="?selectableItemBackground"
+        android:gravity="center_vertical"
+        android:padding="16dp"
+        android:text="Payment" />
+
+    <TextView
+        android:id="@+id/total_price_tw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:gravity="right"
+        android:text="Общая стоимость: 0 грн." />
+
+    <net.cachapa.expandablelayout.ExpandableLayout
+        android:id="@+id/expandable_layout"
+        android:layout_width="match_parent"
+        android:layout_height="210dp"
+        android:background="@android:color/background_light"
+        android:fadeScrollbars="false"
+        android:isScrollContainer="true"
+        android:scrollIndicators="right"
+        android:scrollbars="vertical"
+        app:el_duration="300"
+        app:el_expanded="false">
+
+        <ScrollView
+            android:id="@+id/createdrill_scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:descendantFocusability="beforeDescendants"
+            android:fadeScrollbars="false">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ListView
+                    android:id="@+id/elenentsInPaymentList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:layout_weight="1"
+                    android:cacheColorHint="#00000000"></ListView>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </net.cachapa.expandablelayout.ExpandableLayout>
+
+</LinearLayout>

@@ -1,0 +1,139 @@
+<resources>
+    <string name="app_name">Fiskas</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!-- menu-item -->
+    <string name="contacts">"Kontakt"</string>
+
+    <!-- menu-item -->
+    <string name="profile">"Mój profil"</string>
+
+    <!-- menu-item -->
+    <string name="make_photo">"Zrób zdjęcie"</string>
+    <string name="password">"Hasło"</string>
+    <string name="forgot_your_password">"Zapomniałeś hasło?"</string>
+    <string name="register">"Zarejestruj się"</string>
+    <string name="call_us">"Chcesz być naszym klientem?
+Zadzwoń do nas
+(warunek do pełnego dostępu do aplikacji i wszystkich danych)"</string>
+    <string name="personal_info">"Dane osobowe"</string>
+    <string name="full_name">"Imię i Nazwisko"</string>
+    <string name="first_name">"Imię"</string>
+    <string name="last_name">"Nazwisko"</string>
+    <string name="company_info">"Dane firmy"</string>
+    <string name="company_name">"Nazwa firmy"</string>
+    <string name="bank_name">"Nazwa banka"</string>
+    <string name="account_number">"Numer konta bankowego"</string>
+    <string name="phone">"Telefon"</string>
+    <string name="tax_service">"Urząd skarbowy"</string>
+    <string name="options">"Ustawienia"</string>
+    <string name="company_phone">"Company telefon"</string>
+
+    <!-- выбрать - Wybierz -->
+    <string name="choose">"Wybierz"</string>
+
+    <!-- Log in -->
+    <!-- Fuzzy -->
+    <string name="log_in">"Zaloguj się"</string>
+
+    <!-- Email -->
+    <!-- Fuzzy -->
+    <string name="email">"Email"</string>
+
+    <!-- Have an account? Log in -->
+    <string name="have_an_account">"Have an account? Log in"</string>
+
+    <!-- menu-item -->
+    <string name="balance">"Bilans"</string>
+
+    <!-- navigation title, -->
+    <string name="show_photo">"Pokaż zdjęcie"</string>
+
+    <!-- Push Notifications -->
+    <string name="push_notifications">"Powiadomienia"</string>
+
+    <!-- NIP -->
+    <string name="nip">"NIP"</string>
+
+    <!-- REGON -->
+    <string name="regon">"REGON"</string>
+
+    <!-- Privacy Policy -->
+    <string name="privacy_policy">"Polityka ochrony prywatności"</string>
+    <string name="delete_account">"DELETE ACCOUNT"</string>
+    <string name="full_address">"Kancelaria Księgowa Fiskas Sp z o. o.
+NIP: 8943072632
+REGON: 363655234"</string>
+    <string name="address">"Adres:"</string>
+    <string name="repeat_password">Repeat password</string>
+    <string name="pass_missmatch">Pass missmatching!</string>
+    <string name="email_not_valid">Email not valid!</string>Wyloguj się
+    <string name="log_out">Wyloguj się</string>
+    <string name="company_mail">Company email</string>
+    <string name="notification">Notification</string>
+    <string name="select_photo">Wybierz zdjęcie</string>
+    <string name="send_image">send_image</string>
+    <string name="cancel_image">Cancel</string>
+    <string name="name_not_valid">Enter full name!</string>
+    <string name="new_password">New password</string>
+
+    <string name="name">"Name"</string>
+    <string name="balance_name_of_user">"Nazwa podmiotu"</string>
+    <string name="balance_data_of_user">"Dane podmiotu"</string>
+    <string name="balance_my_tax_form">"Moja forma opodatkowania"</string>
+    <string name="balance_last_actual_time">"Data ostatniej aktualizacji"</string>
+    <string name="balance_period1">"Okres (do wyboru)"</string>
+    <string name="kvartal_1">"Kwartał  I"</string>
+    <string name="kvartal_2">"Kwartał  II"</string>
+    <string name="kvartal_3">"Kwartał  III"</string>
+    <string name="kvartal_4">"Kwartał  IV"</string>
+    <string name="balance_total">"Razem"</string>
+    <string name="balance_cash">"Gotówka"</string>
+    <string name="balance_state_bank">"Stan konta bankowego"</string>
+    <string name="balance_debts">"Należności"</string>
+    <string name="balance_liability">"Zobowiązania, podatki "</string>
+    <string name="balance_sell">"Sprzedaż "</string>
+    <string name="balance_buy">"Zakup"</string>
+    <string name="balance_income">"Zysk"</string>
+    <string name="balance_add_scan">"PRZYCISK *DODAJ FAKTURĘ ZDJĘCIE/SKAN*"</string>
+    <string name="balance_invoice_name">"Nazwa faktury"</string>
+    <string name="balance_date_time">"Data i czas"</string>
+    <string name="balance_download">"Pobierz"</string>
+    <string name="balance_categoty1">"nal"</string>
+    <string name="balance_categoty2">"ost"</string>
+    <string name="balance_categoty3">"dolg"</string>
+    <string name="balance_categoty4">"tax"</string>
+    <string name="close_privacy">Close</string>
+    <string name="r_u_sure_quit">Are you sure?</string>
+    <string name="change_password">Change password</string>
+    <string name="no_data_about_company">Input company info</string>
+    <string name="balance_balance_section">"Mój bilans"</string>
+    <string name="input_payment_name">"Enter payment name"</string>
+    <string name="please_input_payment_name">"Please, enter payment name!"</string>
+    <string name="pass_changed">"Password was chaged!"</string>
+    <string name="save_image">"Save image"</string>
+
+    <!-- menu item -->
+    <string name="invoices">"Moje faktury"</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="factures">Factures</string>
+    <string name="acctual_time">Acctual time</string>
+    <string name="company_address">Adres</string>
+    <string name="tax_form">Forma opodatkowania</string>
+    <string name="enter_phone_number">Enter phone number!</string>
+    <string name="no_data_about_company_address">Enter adress of company!</string>
+    <string name="no_data_about_nip">Enter NIP!</string>
+    <string name="no_data_about_regon">Enter REGON!</string>
+    <string name="no_data_about_tax">Enter TAX!</string>
+    <string name="save_changes">Save changes</string>
+    <string name="done">Done!</string>
+    <string name="picture_not_ready">Picture not ready</string>
+    <string name="no_data_about_company_email">Enter company email!</string>
+    <string name="no_data_about_company_phone">Enter company phone</string>
+</resources>

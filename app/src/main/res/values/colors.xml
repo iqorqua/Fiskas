@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#a0323a</color><!--#dd555f-->
+    <color name="colorPrimaryDark">#a0323a</color>
+    <color name="colorAccent1">#efefef</color>
+    <color name="colorAccent">#dd555f</color>
+    <color name="colorBckgr">#f2f2f2</color>
+    <color name="level_0">#1abc9c</color>
+    <color name="level_1">#3498db</color>
+    <color name="level_2">#e67e22</color>
+    <color name="level_3">#8e44ad</color>
+    <color name="level_4">#f1c40f</color>
+    <color name="level_5">#2ecc71</color>
+    <color name="level_default">#000000</color>
+</resources>

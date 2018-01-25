@@ -1,0 +1,508 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Profile">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:scrollbars="horizontal">
+
+            <com.beardedhen.androidbootstrap.BootstrapCircleThumbnail
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:layout_margin="50dp"
+                android:src="@mipmap/ic_launcher"
+                android:visibility="gone"
+                app:bootstrapBrand="info"
+                app:hasBorder="true" />
+
+            <LinearLayout
+                android:id="@+id/daneOsobove"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="-20dp"
+                    android:background="@color/colorAccent"
+                    android:text="@string/personal_info" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColorHint="@android:color/black">
+
+                            <android.support.design.widget.TextInputEditText
+                                android:id="@+id/txt_box_profile_firstname"
+                                android:layout_width="match_parent"
+                                android:layout_height="45dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:background="@drawable/rounded_corners"
+                                android:drawableRight="@mipmap/ic_keyboard_arrow_right_black_24dp"
+                                android:hint="@string/first_name"
+                                android:inputType="textNoSuggestions"
+                                android:shadowColor="@color/colorPrimaryDark"
+                                android:text="-"
+                                android:textColor="@android:color/black"
+                                android:textColorHighlight="@color/colorPrimaryDark"
+                                android:textColorHint="@android:color/black" />
+                        </android.support.design.widget.TextInputLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="@android:color/black">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/txt_box_profile_secondname"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:background="@drawable/rounded_corners"
+                            android:drawableRight="@mipmap/ic_keyboard_arrow_right_black_24dp"
+                            android:hint="@string/last_name"
+                            android:inputType="textNoSuggestions"
+                            android:shadowColor="@color/colorPrimaryDark"
+                            android:text="-"
+                            android:textColor="@android:color/black"
+                            android:textColorHighlight="@color/colorPrimaryDark"
+                            android:textColorHint="@android:color/black" />
+                    </android.support.design.widget.TextInputLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="10dp">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="@android:color/black">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/txt_box_profile_mail"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:background="@drawable/rounded_corners"
+                            android:drawableRight="@mipmap/ic_keyboard_arrow_right_black_24dp"
+                            android:hint="@string/email"
+                            android:inputType="textEmailAddress"
+                            android:shadowColor="@color/colorPrimaryDark"
+                            android:text="-"
+                            android:textColor="@android:color/black"
+                            android:textColorHighlight="@color/colorPrimaryDark"
+                            android:textColorHint="@android:color/black" />
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColorHint="@android:color/black">
+
+                            <android.support.design.widget.TextInputEditText
+                                android:id="@+id/txt_box_profile_telephone"
+                                android:layout_width="match_parent"
+                                android:layout_height="45dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:background="@drawable/rounded_corners"
+                                android:drawableRight="@mipmap/ic_keyboard_arrow_right_black_24dp"
+                                android:hint="@string/phone"
+                                android:inputType="phone"
+                                android:shadowColor="@color/colorPrimaryDark"
+                                android:text="-"
+                                android:textColor="@android:color/black"
+                                android:textColorHighlight="@color/colorPrimaryDark"
+                                android:textColorHint="@android:color/black" />
+                        </android.support.design.widget.TextInputLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/company_info"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="5dp"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="-20dp"
+                    android:background="@color/colorAccent"
+                    android:text="@string/company_info" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingBottom="10dp">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="@android:color/black">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/txt_box_profile_company_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:background="@drawable/rounded_corners"
+                            android:drawableRight="@mipmap/ic_keyboard_arrow_right_black_24dp"
+                            android:hint="@string/company_name"
+                            android:inputType="textNoSuggestions"
+                            android:shadowColor="@color/colorPrimaryDark"
+                            android:text="-"
+                            android:textColor="@android:color/black"
+                            android:textColorHighlight="@color/colorPrimaryDark"
+                            android:textColorHint="@android:color/black" />
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingBottom="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColorHint="@android:color/black">
+
+                            <android.support.design.widget.TextInputEditText
+                                android:id="@+id/txt_box_profile_company_adress"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:background="@drawable/rounded_corners"
+                                android:drawableRight="@mipmap/ic_keyboard_arrow_right_black_24dp"
+                                android:hint="@string/address"
+                                android:inputType="textNoSuggestions"
+                                android:maxLines="3"
+                                android:minLines="2"
+                                android:shadowColor="@color/colorPrimaryDark"
+                                android:text="-"
+                                android:textColor="@android:color/black"
+                                android:textColorHighlight="@color/colorPrimaryDark"
+                                android:textColorHint="@android:color/black" />
+                        </android.support.design.widget.TextInputLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingBottom="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColorHint="@android:color/black">
+
+                            <android.support.design.widget.TextInputEditText
+                                android:id="@+id/txt_box_profile_nip"
+                                android:layout_width="match_parent"
+                                android:layout_height="45dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:background="@drawable/rounded_corners"
+                                android:drawableRight="@mipmap/ic_keyboard_arrow_right_black_24dp"
+                                android:hint="@string/nip"
+                                android:inputType="text|textNoSuggestions"
+                                android:shadowColor="@color/colorPrimaryDark"
+                                android:text="-"
+                                android:textColor="@android:color/black"
+                                android:textColorHighlight="@color/colorPrimaryDark"
+                                android:textColorHint="@android:color/black" />
+                        </android.support.design.widget.TextInputLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingBottom="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <android.support.design.widget.TextInputLayout
+                            android:id="@+id/txt_box_profile_region"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColorHint="@android:color/black">
+
+                            <android.support.design.widget.TextInputEditText
+                                android:id="@+id/txt_profile_box_region"
+                                android:layout_width="match_parent"
+                                android:layout_height="45dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:background="@drawable/rounded_corners"
+                                android:drawableRight="@mipmap/ic_keyboard_arrow_right_black_24dp"
+                                android:hint="@string/regon"
+                                android:inputType="text|textNoSuggestions|number"
+                                android:shadowColor="@color/colorPrimaryDark"
+                                android:text="-"
+                                android:textColor="@android:color/black"
+                                android:textColorHighlight="@color/colorPrimaryDark"
+                                android:textColorHint="@android:color/black" />
+                        </android.support.design.widget.TextInputLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingBottom="10dp">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="@android:color/black">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/txt_box_profile_company_mail"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:background="@drawable/rounded_corners"
+                            android:drawableRight="@mipmap/ic_keyboard_arrow_right_black_24dp"
+                            android:hint="@string/email"
+                            android:inputType="textEmailAddress"
+                            android:shadowColor="@color/colorPrimaryDark"
+                            android:text="-"
+                            android:textColor="@android:color/black"
+                            android:textColorHighlight="@color/colorPrimaryDark"
+                            android:textColorHint="@android:color/black" />
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="@android:color/black">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/txt_box_profile_company_telephone"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:background="@drawable/rounded_corners"
+                            android:drawableRight="@mipmap/ic_keyboard_arrow_right_black_24dp"
+                            android:hint="@string/phone"
+                            android:inputType="phone"
+                            android:shadowColor="@color/colorPrimaryDark"
+                            android:text="-"
+                            android:textColor="@android:color/black"
+                            android:textColorHighlight="@color/colorPrimaryDark"
+                            android:textColorHint="@android:color/black" />
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.jaredrummler.materialspinner.MaterialSpinner
+                        android:id="@+id/profile_spinner_items_tax"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginTop="8dp"
+                        android:hint="@string/tax_form"
+                        android:textSize="18sp" />
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="@android:color/black"
+                        android:visibility="gone">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/txt_box_profile_tax_service"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:background="@drawable/rounded_corners"
+                            android:drawableRight="@mipmap/ic_keyboard_arrow_right_black_24dp"
+                            android:hint="@string/tax_service"
+                            android:inputType="phone"
+                            android:shadowColor="@color/colorPrimaryDark"
+                            android:text="-"
+                            android:textColor="@android:color/black"
+                            android:textColorHighlight="@color/colorPrimaryDark"
+                            android:textColorHint="@android:color/black" />
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ustav"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="5dp"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/text3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="-20dp"
+                    android:background="@color/colorAccent"
+                    android:text="@string/options" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingBottom="10dp">
+
+                    <Button
+                        android:id="@+id/btn_save_changes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/save_changes" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="10dp">
+
+                    <Button
+                        android:id="@+id/btn_change_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/change_password" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/btn_politics"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/privacy_policy" />
+
+                        <Button
+                            android:id="@+id/btn_delete_account"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/delete_account" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>

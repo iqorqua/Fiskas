@@ -1,0 +1,574 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
+    tools:context=".PaymentList">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/balance_info_section"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="5dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tw_info_balance"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="-20dp"
+                    android:background="@color/colorAccent"
+                    android:text="@string/balance_data_of_user" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingBottom="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColorHint="@android:color/black">
+
+                            <android.support.design.widget.TextInputEditText
+                                android:id="@+id/txt_box_name_company_balance"
+                                android:layout_width="match_parent"
+                                android:layout_height="45dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:background="@drawable/rounded_corners"
+                                android:editable="false"
+                                android:enabled="false"
+                                android:focusable="false"
+                                android:hint="@string/balance_name_of_user"
+                                android:inputType="textNoSuggestions"
+                                android:shadowColor="@color/colorPrimaryDark"
+                                android:text="-"
+                                android:textColor="@android:color/black"
+                                android:textColorHighlight="@color/colorPrimaryDark"
+                                android:textColorHint="@android:color/black" />
+                        </android.support.design.widget.TextInputLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingBottom="10dp">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="@android:color/black">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/txt_box_NIP_balance"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:background="@drawable/rounded_corners"
+                            android:editable="false"
+                            android:enabled="false"
+                            android:focusable="false"
+                            android:hint="@string/nip"
+                            android:inputType="textEmailAddress"
+                            android:shadowColor="@color/colorPrimaryDark"
+                            android:text="-"
+                            android:textColor="@android:color/black"
+                            android:textColorHighlight="@color/colorPrimaryDark"
+                            android:textColorHint="@android:color/black" />
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingBottom="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColorHint="@android:color/black">
+
+                            <android.support.design.widget.TextInputEditText
+                                android:id="@+id/txt_box_forma_opodatk"
+                                android:layout_width="match_parent"
+                                android:layout_height="45dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:background="@drawable/rounded_corners"
+                                android:editable="false"
+                                android:enabled="false"
+                                android:focusable="false"
+                                android:hint="@string/balance_my_tax_form"
+                                android:inputType="phone"
+                                android:shadowColor="@color/colorPrimaryDark"
+                                android:text="-"
+                                android:textColor="@android:color/black"
+                                android:textColorHighlight="@color/colorPrimaryDark"
+                                android:textColorHint="@android:color/black" />
+                        </android.support.design.widget.TextInputLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txt_date_label_explain"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left|center"
+                        android:gravity="left"
+                        android:text="@string/balance_period1"
+                        android:textColor="@android:color/black"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/txt_edit_date2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="2018"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/tw_info_balance2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="-20dp"
+                        android:background="@color/colorAccent"
+                        android:text="@string/balance_balance_section" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingBottom="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/txt_payment_acctual_time"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal"
+                                android:text="@string/acctual_time" />
+
+                            <Button
+                                android:id="@+id/btn_payment_refresh"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="@drawable/refresh" />
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:elevation="0dp">
+
+                            <TextView
+                                android:id="@+id/txt_balance_total_nal"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerHorizontal="false"
+                                android:layout_centerInParent="false"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="200dp"
+                                android:layout_marginRight="50dp"
+                                android:elevation="4dp"
+                                android:gravity="right"
+                                android:text="0$"
+                                android:textColor="@color/level_default" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentTop="true"
+                                android:orientation="horizontal">
+
+                                <Button
+                                    android:id="@+id/btn_category1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_alignParentTop="false"
+                                    android:layout_weight="1"
+                                    android:drawableRight="@mipmap/ic_add_black_24dp"
+                                    android:elevation="1dp"
+                                    android:gravity="left|center_vertical"
+                                    android:tag="nal"
+                                    android:text="@string/balance_categoty1" />
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+                        <com.github.chuross.library.ExpandableLayout
+                            android:id="@+id/quartal1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            custom:exl_expanded="false">
+                            <!-- any child views -->
+
+                            <android.support.v7.widget.RecyclerView
+                                android:id="@+id/recycler_view_1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scrollbarSize="5dp"
+                                android:scrollbarThumbVertical="@android:color/darker_gray"
+                                android:scrollbars="vertical" />
+                        </com.github.chuross.library.ExpandableLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/txt_balance_total_ost"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="200dp"
+                                android:layout_marginRight="50dp"
+                                android:elevation="4dp"
+                                android:gravity="right"
+                                android:text="0$"
+                                android:textColor="@color/level_default" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <Button
+                                    android:id="@+id/btn_category2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:drawableRight="@mipmap/ic_add_black_24dp"
+                                    android:gravity="left|center_vertical"
+                                    android:tag="ost"
+                                    android:text="@string/balance_categoty2" />
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+                        <com.github.chuross.library.ExpandableLayout
+                            android:id="@+id/quartal2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <!-- any child views -->
+
+                            <android.support.v7.widget.RecyclerView
+                                android:id="@+id/recycler_view_2"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scrollbarSize="5dp"
+                                android:scrollbarThumbVertical="@android:color/darker_gray"
+                                android:scrollbars="vertical" />
+                        </com.github.chuross.library.ExpandableLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/txt_balance_total_dolg"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="200dp"
+                                android:layout_marginRight="50dp"
+                                android:elevation="4dp"
+                                android:gravity="right"
+                                android:text="0$"
+                                android:textColor="@color/level_default" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <Button
+                                    android:id="@+id/btn_category3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:drawableRight="@mipmap/ic_add_black_24dp"
+                                    android:gravity="left|center_vertical"
+                                    android:tag="dolg"
+                                    android:text="@string/balance_categoty3" />
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+                        <com.github.chuross.library.ExpandableLayout
+                            android:id="@+id/quartal3"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <!-- any child views -->
+
+                            <android.support.v7.widget.RecyclerView
+                                android:id="@+id/recycler_view_3"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scrollbarSize="5dp"
+                                android:scrollbarThumbVertical="@android:color/darker_gray"
+                                android:scrollbars="vertical" />
+                        </com.github.chuross.library.ExpandableLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/txt_balance_total_tax"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="200dp"
+                                android:layout_marginRight="50dp"
+                                android:elevation="4dp"
+                                android:gravity="right"
+                                android:text="0$"
+                                android:textColor="@color/level_default" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <Button
+                                    android:id="@+id/btn_category4"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:drawableRight="@mipmap/ic_add_black_24dp"
+                                    android:gravity="left|center_vertical"
+                                    android:tag="tax"
+                                    android:text="@string/balance_categoty4" />
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+                        <com.github.chuross.library.ExpandableLayout
+                            android:id="@+id/quartal4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <!-- any child views -->
+
+                            <android.support.v7.widget.RecyclerView
+                                android:id="@+id/recycler_view_4"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scrollbarSize="5dp"
+                                android:scrollbarThumbVertical="@android:color/darker_gray"
+                                android:scrollbars="vertical" />
+                        </com.github.chuross.library.ExpandableLayout>
+                    </LinearLayout>
+
+                    <mehdi.sakout.fancybuttons.FancyButton
+                        android:id="@+id/btn_balance_change_attr"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="20dp"
+                        android:layout_weight="1"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingTop="10dp"
+                        custom:fb_text="Change"
+                        fancy:fb_borderColor="#FFFFFF"
+                        fancy:fb_borderWidth="1dp"
+                        fancy:fb_defaultColor="@color/colorPrimary"
+                        fancy:fb_focusColor="@color/colorPrimaryDark"
+                        fancy:fb_iconPosition="left"
+                        fancy:fb_radius="30dp"
+                        fancy:fb_textColor="#FFFFFF" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/colorPrimary">
+
+                    <Space
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/balance_sell"
+                            android:textColor="@android:color/black"
+                            android:textSize="18sp"
+                            android:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/tw_balance_sell"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="right"
+                            android:text="100$"
+                            android:textColor="@android:color/black"
+                            android:textSize="18sp"
+                            android:visibility="visible" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView12"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/balance_buy"
+                            android:textColor="@android:color/black"
+                            android:textSize="18sp"
+                            android:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/tw_balance_buy"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="right"
+                            android:text="100$"
+                            android:textColor="@android:color/black"
+                            android:textSize="18sp"
+                            android:visibility="visible" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView15"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/balance_income"
+                            android:textColor="@android:color/black"
+                            android:textSize="18sp"
+                            android:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/tw_balance_income"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="right"
+                            android:text="100$"
+                            android:textColor="@android:color/black"
+                            android:textSize="18sp"
+                            android:visibility="visible" />
+
+                    </LinearLayout>
+
+                    <mehdi.sakout.fancybuttons.FancyButton
+                        android:id="@+id/btn_balance_make_photo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        android:layout_weight="1"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingTop="10dp"
+                        android:visibility="visible"
+                        custom:fb_text="@string/make_photo"
+                        fancy:fb_borderColor="#FFFFFF"
+                        fancy:fb_borderWidth="1dp"
+                        fancy:fb_defaultColor="@color/colorPrimary"
+                        fancy:fb_focusColor="@color/colorPrimaryDark"
+                        fancy:fb_iconPosition="left"
+                        fancy:fb_radius="30dp"
+                        fancy:fb_textColor="#FFFFFF" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.app.fiskas.fiskas.ShowImageActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.app.fiskas.fiskas.PhotoResultSend">
+
+        <RelativeLayout
+            android:id="@+id/imagePreView_beforeSend"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp">
+
+            <com.wajahatkarim3.longimagecamera.TouchImageView
+                android:id="@+id/image_view_preview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/card"
+                android:text="Hello World!" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/imagePreviewer"
+                android:layout_alignParentBottom="true"
+                android:layout_alignStart="@+id/imagePreviewer"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_preview_close"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignTop="@+id/record_panel"
+                        android:layout_gravity="center"
+                        android:width="60dp"
+                        android:background="@drawable/rounded_corners_select_img"
+                        android:gravity="center"
+                        android:maxWidth="60dp"
+                        android:text="@string/cancel_image"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_preview_save"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignTop="@+id/record_panel"
+                        android:layout_gravity="center"
+                        android:width="60dp"
+                        android:background="@drawable/rounded_corners_select_img"
+                        android:gravity="center"
+                        android:maxWidth="60dp"
+                        android:text="@string/save_image"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>

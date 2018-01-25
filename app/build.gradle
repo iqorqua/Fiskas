@@ -1,0 +1,85 @@
+apply plugin: 'com.android.application'
+
+android {
+    defaultConfig {
+        applicationId "com.app.fiskas.fiskas"
+        //multiDexEnabled true
+        minSdkVersion 17
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    buildToolsVersion '26.0.2'
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    compileSdkVersion 27
+    productFlavors {
+    }
+}
+allprojects {
+    repositories {
+        maven { url "https://jitpack.io" }
+        maven { url "http://dev.open-rnd.net:30844/content/groups/public/" }
+
+        jcenter()
+    }
+}
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    compileOnly 'com.android.support:appcompat-v7:25.4.0'
+    implementation 'com.android.support:design:27.0.2'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'com.android.support:support-v4:27.0.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    compile 'com.infideap.drawerbehavior:drawer-behavior:0.0.2'
+    compile 'com.wajahatkarim3.LongImageCamera:LongImageCamera:1.0.2'
+    compile 'com.github.chrisbanes:PhotoView:2.0.0'
+    compile 'it.sephiroth.android.library.imagezoom:imagezoom:+'
+    compile 'com.github.oswaldo89:LatestPhotoGallery:1.0.1'
+    compile 'com.github.florent37:materialtextfield:1.0.7'
+    compile 'com.github.myinnos:AwesomeImagePicker:1.0.2'
+    compile 'com.rengwuxian.materialedittext:library:2.1.4'
+    compile 'info.hoang8f:fbutton:1.0.5'
+    compile 'com.beardedhen:androidbootstrap:2.3.2'
+    compile 'com.github.medyo:fancybuttons:1.8.4'
+    compile 'de.codecrafters.tableview:tableview:2.8.0'
+    compile 'com.google.code.gson:gson:2.6.1'
+    compile 'com.github.florent37:camerafragment:1.0.7'
+    compile 'com.jakewharton:butterknife:8.6.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.6.0'
+    //compile 'me.panpf:switch-button:2.0.0'
+    compile 'com.studioidan.httpagent:httpagent:1.0.14@aar'
+    compile 'com.github.amirdew:JSON:v1.0.0'
+    compile 'com.thanosfisherman.mayi:mayi:1.4'
+    compile 'net.cachapa.expandablelayout:expandablelayout:2.9.2'
+    compile 'com.lucasurbas:listitemview:1.0.5'
+    compile 'com.ericliu.asyncexpandablelist:asyncexpandablelist:1.1.0'
+    compile 'net.cachapa.expandablelayout:expandablelayout:2.9.2'
+    compile 'com.jzxiang.pickerview:TimePickerDialog:1.0.1'
+    compile 'com.squareup.okhttp3:okhttp:3.9.1'
+    compile 'com.github.chuross:expandable-layout:1.0.5'
+    compile 'com.bunk3r:spanez:2.0.1'
+    compile 'com.github.Haegon:EasyNativeDialog:0.2.0'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'io.github.lizhangqu:coreprogress:1.0.2'
+    compile 'com.jaredrummler:material-spinner:1.2.4'
+    compile 'com.koushikdutta.ion:ion:2.+'
+    compile 'com.otaliastudios:cameraview:1.4.1'
+    compile 'io.fotoapparat.fotoapparat:library:2.1.2'
+    compile 'net.bozho.easycamera:easycamera:0.0.1:aar@aar'
+    compile 'com.mindorks:paracamera:0.2.2'
+    implementation 'com.android.support:recyclerview-v7:27.0.2'
+    implementation 'com.android.support:appcompat-v7:27.0.2'
+    implementation 'com.android.support:appcompat-v7:27.0.2'
+}
