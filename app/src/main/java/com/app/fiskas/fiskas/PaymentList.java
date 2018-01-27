@@ -35,7 +35,6 @@ import com.app.fiskas.fiskas.CustomElements.PaymentItem;
 import com.app.fiskas.fiskas.views.LevelBeamView;
 import com.ericliu.asyncexpandablelist.CollectionView;
 import com.ericliu.asyncexpandablelist.CollectionViewCallbacks;
-import com.github.florent37.camerafragment.internal.utils.DateTimeUtils;
 import com.jzxiang.pickerview.TimePickerDialog;
 import com.jzxiang.pickerview.data.Type;
 import com.jzxiang.pickerview.listener.OnDateSetListener;

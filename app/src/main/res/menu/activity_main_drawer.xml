@@ -7,7 +7,8 @@
     <group >
         <item
             android:checkable="false"
-            android:enabled="false" />
+            android:enabled="false"
+            android:title="" />
     </group>
     <group android:checkableBehavior="single">
         <item

@@ -1,5 +1,6 @@
 package com.app.fiskas.fiskas;
 
+import android.Manifest;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.ContextWrapper;
@@ -14,6 +15,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import com.squareup.picasso.Picasso;
+import com.thanosfisherman.mayi.Mayi;
+import com.thanosfisherman.mayi.PermissionBean;
+import com.thanosfisherman.mayi.PermissionToken;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -22,6 +26,7 @@ import java.io.OutputStream;
 import java.util.UUID;
 
 import in.myinnos.awesomeimagepicker.activities.HelperActivity;
+import in.myinnos.savebitmapandsharelib.SaveAndShare;
 
 
 public class ShowImageActivity extends HelperActivity {
@@ -34,6 +39,12 @@ public class ShowImageActivity extends HelperActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_image);
+        Mayi.withActivity(this)
+                .withPermissions(Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.MEDIA_CONTENT_CONTROL, Manifest.permission.RECORD_AUDIO, Manifest.permission.INTERNET, Manifest.permission.ACCESS_NETWORK_STATE)
+                .onRationale(this::permissionRationaleMulti)
+                .onResult(this::permissionResultMulti)
+                .check();
+        
         ImageView previewImage = (ImageView) findViewById(R.id.image_view_preview);
 
         Bundle args = getIntent().getExtras();
@@ -61,7 +72,8 @@ public class ShowImageActivity extends HelperActivity {
                 pd.setTitle("Wait...");
                 pd.setMessage("Loading...");
                 try {
-                    MediaStore.Images.Media.insertImage(getContentResolver(), ((BitmapDrawable) previewImage.getDrawable()).getBitmap(), previewFileName, previewFileDate);
+                    MediaStore.Images.Media.insertImage(getContentResolver(), ((BitmapDrawable) previewImage.getDrawable()).getBitmap(), previewFileName+".jpeg", previewFileDate);
+                    SaveAndShare.save(ShowImageActivity.this, ((BitmapDrawable) previewImage.getDrawable()).getBitmap(), previewFileName, previewFileDate, previewFilePath);
                     bitmap = ((BitmapDrawable) previewImage.getDrawable()).getBitmap();
                     if (bitmap != null){
                         saveToInternalStorage(bitmap);
@@ -80,6 +92,12 @@ public class ShowImageActivity extends HelperActivity {
                 }
             }
         });
+    }
+
+    private void permissionResultMulti(PermissionBean[] permissionBeans) {
+    }
+
+    private void permissionRationaleMulti(PermissionBean[] permissionBeans, PermissionToken permissionToken) {
     }
 
     private String saveToInternalStorage(Bitmap bitmapImage){

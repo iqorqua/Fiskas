@@ -11,7 +11,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.github.florent37.camerafragment.internal.utils.ImageLoader;
 import com.koushikdutta.ion.Ion;
 import com.squareup.picasso.Picasso;
 
@@ -53,8 +52,8 @@ public class PhotoResultSend extends AppCompatActivity {
             setResult(MainActivity.START_CAMERA_FRAGMENT);
 
         String previewFilePath = args.get(FILE_PATH_ARG).toString();
-            ImageLoader.Builder builder = new ImageLoader.Builder(this);
-            builder.load(previewFilePath).build().into((ImageView) findViewById(R.id.imagePreviewer));
+            /*ImageLoader.Builder builder = new ImageLoader.Builder(this);
+            builder.load(previewFilePath).build().into((ImageView) findViewById(R.id.imagePreviewer));*/
             //Picasso.with(this).load(previewFilePath).into((ImageView) findViewById(R.id.imagePreviewer));
         Ion.with(this).load(previewFilePath).intoImageView(findViewById(R.id.imagePreviewer));
         findViewById(R.id.btn_select_photo_accept).setOnClickListener(new View.OnClickListener() {

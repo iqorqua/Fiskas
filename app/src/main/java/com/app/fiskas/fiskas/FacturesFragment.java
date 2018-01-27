@@ -39,10 +39,6 @@ import static com.app.fiskas.fiskas.LoginActivity.authManager;
 public class FacturesFragment extends Fragment {
 
     static JSON jsonItems;
-    public FacturesFragment() {
-        // Required empty public constructor
-    }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

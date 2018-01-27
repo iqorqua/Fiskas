@@ -31,28 +31,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.app.fiskas.fiskas.API.AuthManager;
-import com.github.florent37.camerafragment.CameraFragment;
-import com.github.florent37.camerafragment.PreviewActivity;
-import com.github.florent37.camerafragment.configuration.Configuration;
-import com.github.florent37.camerafragment.configuration.ConfigurationProviderImpl;
-import com.github.florent37.camerafragment.internal.controller.CameraController;
-import com.github.florent37.camerafragment.internal.controller.impl.Camera1Controller;
-import com.github.florent37.camerafragment.internal.controller.impl.Camera2Controller;
-import com.github.florent37.camerafragment.internal.enums.MediaAction;
-import com.github.florent37.camerafragment.internal.ui.*;
-import com.github.florent37.camerafragment.internal.utils.CameraHelper;
-import com.github.florent37.camerafragment.listeners.CameraFragmentControlsAdapter;
-import com.github.florent37.camerafragment.listeners.CameraFragmentResultAdapter;
-import com.github.florent37.camerafragment.listeners.CameraFragmentResultListener;
-import com.github.florent37.camerafragment.listeners.CameraFragmentStateAdapter;
-import com.github.florent37.camerafragment.listeners.CameraFragmentStateListener;
 import com.gohn.nativedialog.ButtonClickListener;
 import com.gohn.nativedialog.ButtonType;
 import com.gohn.nativedialog.NDialog;
 import com.google.gson.annotations.SerializedName;
 import com.infideap.drawerbehavior.AdvanceDrawerLayout;
-import com.mindorks.paracamera.Camera;
 import com.thanosfisherman.mayi.Mayi;
 import com.thanosfisherman.mayi.PermissionBean;
 import com.thanosfisherman.mayi.PermissionToken;
@@ -89,7 +72,6 @@ public class MainActivity extends AppCompatActivity
 
     public static final int START_CAMERA_FRAGMENT = 777;
     View cameraControls;
-    CameraExtended camera;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -205,8 +187,9 @@ public class MainActivity extends AppCompatActivity
                     break;
                 }
 
-                /*fragment = new CameraFragment();
-
+                Intent intent = new Intent(getBaseContext(), CameraActivity.class);
+                startActivityForResult(intent, ConstantsCustomGallery.REQUEST_CODE);
+/*
                 cameraControls.setVisibility(View.VISIBLE);
                 findViewById(R.id.btn_select_photo_concamera).setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -228,7 +211,7 @@ public class MainActivity extends AppCompatActivity
                                                                     });*/
 
 // Build the camera
-                camera = new CameraExtended.Builder()
+                /*camera = new CameraExtended.Builder()
                         .resetToCorrectOrientation(true)// it will rotate the camera bitmap to the correct orientation from meta data
                         .setTakePhotoRequestCode(CameraExtended.REQUEST_TAKE_PHOTO)
                         .setDirectory("pics")
@@ -243,7 +226,7 @@ public class MainActivity extends AppCompatActivity
                     e.printStackTrace();
                 }
                 DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-                drawer.closeDrawer(GravityCompat.START);
+                drawer.closeDrawer(GravityCompat.START);*/
 
                 title = getString(R.string.capture_photo);
                 break;
@@ -331,8 +314,8 @@ public class MainActivity extends AppCompatActivity
         super.onActivityResult(requestCode, resultCode, data);
 
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == CameraExtended.REQUEST_TAKE_PHOTO) {
-            Bitmap bitmap = camera.getCameraBitmap();
+        if (false ) {
+            Bitmap bitmap = null;
             if (bitmap == null)
                 return;
             OutputStream os;
