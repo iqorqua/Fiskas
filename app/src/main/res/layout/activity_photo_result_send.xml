@@ -27,7 +27,7 @@
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
                 android:background="@drawable/rounded_corners"
-                android:hint="@string/input_payment_name"
+                android:hint="@string/balance_invoice_name"
                 android:inputType="textNoSuggestions"
                 android:shadowColor="@color/colorPrimaryDark"
                 android:textColor="@android:color/black"
@@ -69,7 +69,7 @@
                     android:background="@drawable/rounded_corners_select_img"
                     android:gravity="center"
                     android:maxWidth="60dp"
-                    android:text="@string/cancel_image"
+                    android:text="@string/photo_button_cancel"
                     android:textColor="@color/colorAccent"
                     android:textSize="10sp" />
             </LinearLayout>
@@ -92,7 +92,7 @@
                     android:background="@drawable/rounded_corners_select_img"
                     android:gravity="center"
                     android:maxWidth="60dp"
-                    android:text="@string/send_image"
+                    android:text="@string/photo_send_button_send"
                     android:textColor="@color/colorAccent"
                     android:textSize="10sp" />
             </LinearLayout>

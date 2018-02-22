@@ -2,6 +2,7 @@ package com.app.fiskas.fiskas;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
@@ -13,7 +14,16 @@ import android.widget.TextView;
 
 import com.app.fiskas.fiskas.API.AuthManager;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.IOException;
+
 import mehdi.sakout.fancybuttons.FancyButton;
+
+import static io.reactivex.annotations.SchedulerSupport.IO;
 
 /**
  * A login screen that offers login via email/password.
@@ -62,7 +72,7 @@ public class LoginActivity extends AppCompatActivity {//implements LoaderCallbac
             public void onClick(View view) {
                 if(mEmailView.getText().toString().equals("") | !RegistrationActivity.validEmail(mEmailView.getText().toString())){
 
-                    Snackbar.make(view, getText(R.string.email_not_valid), Snackbar.LENGTH_LONG)
+                    Snackbar.make(view, getText(R.string.email_is_not_valid), Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();
                     return;
                 }
@@ -98,10 +108,21 @@ public class LoginActivity extends AppCompatActivity {//implements LoaderCallbac
                 pd.setTitle("Wait...");
                 pd.setMessage("Loading...");
                 pd.show();
-               authManager.onLogined(new AuthManager.Logined() {
+                String finalLogin = login +"#"+pass;
+                authManager.onLogined(new AuthManager.Logined() {
                    @Override
                    public void logined() {
                        pd.dismiss();
+                       FileOutputStream stream = null;
+                       try {
+                       File file = new File(getApplicationInfo().dataDir + "/file");
+                       stream = new FileOutputStream(file);
+                           stream.write((finalLogin).getBytes());
+                           stream.close();
+                       }
+                       catch (Exception ex){
+                           ex.printStackTrace();
+                       }
                        Intent intent = new Intent(getBaseContext(), MainActivity.class);
                        startActivityForResult(intent, 1);
                    }
@@ -115,7 +136,7 @@ public class LoginActivity extends AppCompatActivity {//implements LoaderCallbac
                                .setAction("Action", null).show();
                    }
                });
-                authManager.logIn("qwerty@gmail.com", "qqqqqq", false);///(login, pass, false);//
+                authManager.logIn(login, pass, false);//("qwerty@gmail.com", "qqqqqq", false);///
 
 
             }
@@ -149,6 +170,40 @@ Intent intent = new Intent(this, LoginActivity.class);
 
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);*/
+    }
+
+    @Override
+    protected void onResume(){
+        super.onResume();
+        File file = new File(getApplicationInfo().dataDir + "/file");
+        if(file.exists()){
+            String text = new String();
+
+            try {
+                BufferedReader br = new BufferedReader(new FileReader(file));
+                String line;
+
+                while ((line = br.readLine()) != null) {
+                    text= line;
+                }
+                br.close();
+                String auth_data[] = text.split("#");
+                if (auth_data.length==2){
+                    mEmailView.setText(auth_data[0]);
+                    mPasswordView.setText(auth_data[1]);
+                    loginButton.performClick();
+                }
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+//Do something
+        else{
+
+        }
+// Do something else.
     }
 }
 

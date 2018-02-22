@@ -61,7 +61,7 @@ public class PhotoResultSend extends AppCompatActivity {
             public void onClick(View view) {
                 TextInputEditText name_paynemt = (TextInputEditText)findViewById(R.id.txt_box_name_photo_send);
                 if (name_paynemt.getText().toString().equals("")){
-                    Snackbar.make(view, R.string.please_input_payment_name, Snackbar.LENGTH_LONG)
+                    Snackbar.make(view, R.string.first_name_should_not_be_empty, Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();
                     return;
                 }
@@ -119,7 +119,7 @@ public class PhotoResultSend extends AppCompatActivity {
                         }
 
                     });
-                    request = new Request.Builder().url("https://serwer1651270.home.pl/admin/api/upload").post(progressRequestBody).build();
+                    request = new Request.Builder().url("http://fiskasapp.unixstorm.org/admin/api/upload").post(progressRequestBody).build();
                     Response response = client.newCall(request).execute();
                 } catch (IOException e) {
                     e.printStackTrace();

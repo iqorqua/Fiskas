@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity
         AdvanceDrawerLayout drawer = (AdvanceDrawerLayout) findViewById(R.id.drawer_layout);
         ;
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+                this, drawer, toolbar, R.string.app_name, R.string.app_name);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
@@ -253,19 +253,29 @@ public class MainActivity extends AppCompatActivity
             }
             case R.id.nav_my_pictures: {
                 fragment = new FacturesFragment();
-                title = getString(R.string.factures);
+                title = getString(R.string.invoices);
                 break;
             }
             case R.id.nav_logout:{
                 NDialog nDialog = new NDialog(MainActivity.this, ButtonType.TWO_BUTTON);
                 nDialog.setIcon(R.drawable.ic_logout);
                 nDialog.setTitle(R.string.log_out);
-                nDialog.setMessage(R.string.r_u_sure_quit);
+                nDialog.setMessage(R.string.log_out_message_my);
+                nDialog.setNegativeButtonText(R.string.no);
+                nDialog.setPositiveButtonText(R.string.yes);
                 ButtonClickListener buttonClickListener = new ButtonClickListener() {
                     @Override
                     public void onClick(int button) {
                         switch (button) {
                             case NDialog.BUTTON_POSITIVE:
+                                File fdelete = new File(getApplicationInfo().dataDir + "/file");
+                                if (fdelete.exists()) {
+                                    if (fdelete.delete()) {
+                                        System.out.println("file Deleted :" + fdelete.getPath());
+                                    } else {
+                                        System.out.println("file not Deleted :" + fdelete.getPath());
+                                    }
+                                }
                                 finish();
                                 Intent intent = new Intent(getBaseContext(), LoginActivity.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY | Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -279,13 +289,11 @@ public class MainActivity extends AppCompatActivity
                 };
 
 // Positive Button
-                nDialog.setPositiveButtonText("YES");
                 nDialog.setPositiveButtonTextColor(Color.BLUE);
                 nDialog.setPositiveButtonOnClickDismiss(false); // default : true
                 nDialog.setPositiveButtonClickListener(buttonClickListener);
 
 // Negative Button
-                nDialog.setNegativeButtonText("NO");
                 nDialog.setNegativeButtonTextColor(Color.parseColor("#FF0000"));
                 nDialog.setNegativeButtonOnClickDismiss(true); // default : true
                 nDialog.setNegativeButtonClickListener(buttonClickListener);

@@ -115,11 +115,11 @@ public class Profile extends Fragment {
                                 .addFormDataPart("company_tax_code", company_tax.getText().toString())
                                 .addFormDataPart("tax_type", spinner_tax_form.getText().toString())
                                 .build();
-                        request = new Request.Builder().url("https://serwer1651270.home.pl/admin/api/update").post(requestBody).build();
+                        request = new Request.Builder().url("http://fiskasapp.unixstorm.org/admin/api/update").post(requestBody).build();
 
                         Response response = client.newCall(request).execute();
                         LoginActivity.authManager.logIn(LoginActivity.authManager.get_login(), LoginActivity.authManager.get_pass(), true);
-                        Snackbar.make(view, getResources().getText(R.string.done), Snackbar.LENGTH_LONG)
+                        Snackbar.make(view, getResources().getText(R.string.profile_changed), Snackbar.LENGTH_LONG)
                                 .show();
                     } catch (IOException e) {
                         e.printStackTrace();

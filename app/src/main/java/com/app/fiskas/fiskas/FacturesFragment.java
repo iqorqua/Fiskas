@@ -64,7 +64,7 @@ public class FacturesFragment extends Fragment {
                             .addFormDataPart("email", authManager.get_login())
                             .addFormDataPart("pass", authManager.get_pass())
                             .build();
-                    request = new Request.Builder().url("https://serwer1651270.home.pl/admin/api/factures").post(requestBody).build();
+                    request = new Request.Builder().url("http://fiskasapp.unixstorm.org/admin/api/factures").post(requestBody).build();
                     Response response = client.newCall(request).execute();
                     JSON json = new JSON(response.body().string());
                     if(json.key("res").intValue() != 0){
@@ -92,7 +92,7 @@ public class FacturesFragment extends Fragment {
                 for (int i=0; i<jsonItems.key("factures").count(); i++){
                     try {
                         String name = jsonItems.key("factures").getJsonArray().getJSONObject(i).get("name").toString();
-                        String image_link = "https://serwer1651270.home.pl" + jsonItems.key("factures").getJsonArray().getJSONObject(i).get("image").toString();
+                        String image_link = "http://fiskasapp.unixstorm.org" + jsonItems.key("factures").getJsonArray().getJSONObject(i).get("image").toString();
                         String data = jsonItems.key("factures").getJsonArray().getJSONObject(i).get("date").toString();
                         String id = jsonItems.key("factures").getJsonArray().getJSONObject(i).get("id").toString();
                         FactureItem fi = new FactureItem(name, id, image_link, data);

@@ -51,7 +51,7 @@
             android:background="@drawable/rounded_corners"
             android:drawableLeft="@mipmap/ic_https_black_24dp"
             android:hint="@string/password"
-            android:inputType="text"
+            android:inputType="text|textPassword"
             android:paddingLeft="15dp"
             android:paddingRight="15dp" />
 

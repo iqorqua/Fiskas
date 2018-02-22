@@ -55,7 +55,7 @@
                         android:background="@drawable/rounded_corners_select_img"
                         android:gravity="center"
                         android:maxWidth="60dp"
-                        android:text="@string/cancel_image"
+                        android:text="@string/photo_button_cancel"
                         android:textColor="@color/colorAccent"
                         android:textSize="10sp" />
                 </LinearLayout>
@@ -79,7 +79,7 @@
                         android:background="@drawable/rounded_corners_select_img"
                         android:gravity="center"
                         android:maxWidth="60dp"
-                        android:text="@string/save_image"
+                        android:text="@string/invoice_button_save"
                         android:textColor="@color/colorAccent"
                         android:textSize="10sp" />
                 </LinearLayout>

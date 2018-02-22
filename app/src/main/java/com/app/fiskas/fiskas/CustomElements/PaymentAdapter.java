@@ -53,7 +53,7 @@ public class PaymentAdapter extends BaseAdapter {
         PaymentItem p = getPaymentItem(position);
         ListItemView listItem = (ListItemView) view.findViewById(R.id.list_item_view);
         listItem.setTitle(p.paymentNameTitle);
-        listItem.setSubtitle(p.price + " $");
+        listItem.setSubtitle(p.price + " zł");
         listItem.setTag(p.m_tag);
         listItem.setOnClickListener(new View.OnClickListener() {
             @Override

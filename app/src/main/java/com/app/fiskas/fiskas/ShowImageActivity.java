@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.ContextWrapper;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -14,6 +15,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+
+import com.bluehomestudio.progresswindow.ProgressWindow;
+import com.bluehomestudio.progresswindow.ProgressWindowConfiguration;
+import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 import com.thanosfisherman.mayi.Mayi;
 import com.thanosfisherman.mayi.PermissionBean;
@@ -34,7 +39,14 @@ public class ShowImageActivity extends HelperActivity {
     public final static String APP_PATH_SD_CARD = "/DesiredSubfolderName/";
     public final static String APP_THUMBNAIL_PATH_SD_CARD = "thumbnails";
     Bitmap bitmap = null;
+    private ProgressWindow progressWindow;
 
+    @Override
+    protected void onDestroy()
+    {
+        super.onDestroy();
+        progressWindow.hideProgress();
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,14 +56,36 @@ public class ShowImageActivity extends HelperActivity {
                 .onRationale(this::permissionRationaleMulti)
                 .onResult(this::permissionResultMulti)
                 .check();
-        
+
         ImageView previewImage = (ImageView) findViewById(R.id.image_view_preview);
 
         Bundle args = getIntent().getExtras();
         String previewFilePath = args.get("image_link").toString();
         String previewFileDate = args.get("image_date").toString();
         String previewFileName = args.get("image_name").toString();
-        Picasso.with(this).load(previewFilePath).into(previewImage);
+        progressConfigurations();
+        progressWindow.showProgress();
+        try {
+            Picasso.with(this).load(previewFilePath).fit().centerInside().into(previewImage, new Callback() {
+                @Override
+                public void onSuccess() {
+                    progressWindow.hideProgress();
+                }
+
+                @Override
+                public void onError() {
+                    previewImage.setImageResource(R.drawable.error);
+                    progressWindow.hideProgress();
+                    Snackbar.make((ImageView) findViewById(R.id.image_view_preview), R.string.error_loadind, Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+                }
+            });
+        }
+        catch (Exception ex){
+            ex.printStackTrace();
+            finish();
+        }
+            ;
         /*ImageViewFuture ion = Ion.with(previewImage)
                 .centerCrop()
                 .error(R.drawable.error)
@@ -80,7 +114,7 @@ public class ShowImageActivity extends HelperActivity {
                         finish();
                     }
                     else {
-                        Snackbar.make(view, getResources().getText(R.string.picture_not_ready), Snackbar.LENGTH_LONG)
+                        Snackbar.make(view, getResources().getText(R.string.photo_send_alert_image_name), Snackbar.LENGTH_LONG)
                                 .show();
                     }
                 }
@@ -122,5 +156,14 @@ public class ShowImageActivity extends HelperActivity {
             }
         }
         return directory.getAbsolutePath();
+    }
+
+
+    private void progressConfigurations(){
+        progressWindow = ProgressWindow.getInstance(this);
+        ProgressWindowConfiguration progressWindowConfiguration = new ProgressWindowConfiguration();
+        progressWindowConfiguration.backgroundColor = Color.parseColor("#32000000") ;
+        progressWindowConfiguration.progressColor = Color.WHITE ;
+        progressWindow.setConfiguration(progressWindowConfiguration);
     }
 }

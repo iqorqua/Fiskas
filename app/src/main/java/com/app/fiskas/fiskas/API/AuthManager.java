@@ -78,7 +78,7 @@ public class AuthManager {
                             .setType(MultipartBody.FORM)
                             .addFormDataPart("email", email)
                             .build();
-                    request = new Request.Builder().url("https://serwer1651270.home.pl/admin/api/recovery").post(requestBody).build();
+                    request = new Request.Builder().url("http://fiskasapp.unixstorm.org/admin/api/recovery").post(requestBody).build();
                     Response response = client.newCall(request).execute();
 
                     recovered_callback.recovered(new JSON(response.body().string()).key("message").stringValue());
@@ -129,7 +129,7 @@ public class AuthManager {
                             .addFormDataPart("email", arg_email)
                             .addFormDataPart("pass", arg_password)
                             .build();
-                    request = new Request.Builder().url("https://serwer1651270.home.pl/admin/api/login").post(requestBody).build();
+                    request = new Request.Builder().url("http://fiskasapp.unixstorm.org/admin/api/login").post(requestBody).build();
 
                     try {
                         Response response = client.newCall(request).execute();
@@ -189,7 +189,7 @@ public class AuthManager {
                             .addFormDataPart("company_tax_code", companyTaxCode)
                             .addFormDataPart("tax_type", tax_type)
                             .build();
-                    request = new Request.Builder().url("https://serwer1651270.home.pl/admin/api/register").post(requestBody).build();
+                    request = new Request.Builder().url("http://fiskasapp.unixstorm.org/admin/api/register").post(requestBody).build();
 
                     Response response = client.newCall(request).execute();
                     register_calback.registered();

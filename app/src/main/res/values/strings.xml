@@ -1,11 +1,6 @@
-<resources>
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Fiskas</string>
-
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-
-    <string name="action_settings">Settings</string>
-
     <!-- menu-item -->
     <string name="contacts">"Kontakt"</string>
 
@@ -15,13 +10,14 @@
     <!-- menu-item -->
     <string name="make_photo">"Zrób zdjęcie"</string>
     <string name="password">"Hasło"</string>
+
+    <!-- forgot your password? -->
     <string name="forgot_your_password">"Zapomniałeś hasło?"</string>
     <string name="register">"Zarejestruj się"</string>
     <string name="call_us">"Chcesz być naszym klientem?
 Zadzwoń do nas
-(warunek do pełnego dostępu do aplikacji i wszystkich danych)"</string>
+"</string>
     <string name="personal_info">"Dane osobowe"</string>
-    <string name="full_name">"Imię i Nazwisko"</string>
     <string name="first_name">"Imię"</string>
     <string name="last_name">"Nazwisko"</string>
     <string name="company_info">"Dane firmy"</string>
@@ -29,23 +25,21 @@ Zadzwoń do nas
     <string name="bank_name">"Nazwa banka"</string>
     <string name="account_number">"Numer konta bankowego"</string>
     <string name="phone">"Telefon"</string>
-    <string name="tax_service">"Urząd skarbowy"</string>
+    <string name="tax_service">"Forma opodatkowania"</string>
     <string name="options">"Ustawienia"</string>
-    <string name="company_phone">"Company telefon"</string>
 
+    <!-- Поменял с choose на choose_photo -->
     <!-- выбрать - Wybierz -->
-    <string name="choose">"Wybierz"</string>
+    <string name="choose_photo">"Wybierz zdjęcie"</string>
 
     <!-- Log in -->
-    <!-- Fuzzy -->
     <string name="log_in">"Zaloguj się"</string>
 
     <!-- Email -->
-    <!-- Fuzzy -->
     <string name="email">"Email"</string>
 
     <!-- Have an account? Log in -->
-    <string name="have_an_account">"Have an account? Log in"</string>
+    <string name="have_an_account">"Masz konto ? Zaloguj się"</string>
 
     <!-- menu-item -->
     <string name="balance">"Bilans"</string>
@@ -64,29 +58,67 @@ Zadzwoń do nas
 
     <!-- Privacy Policy -->
     <string name="privacy_policy">"Polityka ochrony prywatności"</string>
-    <string name="delete_account">"DELETE ACCOUNT"</string>
+    <string name="delete_account">"Usuń konto"</string>
     <string name="full_address">"Kancelaria Księgowa Fiskas Sp z o. o.
 NIP: 8943072632
 REGON: 363655234"</string>
     <string name="address">"Adres:"</string>
-    <string name="repeat_password">Repeat password</string>
-    <string name="pass_missmatch">Pass missmatching!</string>
-    <string name="email_not_valid">Email not valid!</string>Wyloguj się
-    <string name="log_out">Wyloguj się</string>
-    <string name="company_mail">Company email</string>
-    <string name="notification">Notification</string>
-    <string name="select_photo">Wybierz zdjęcie</string>
-    <string name="send_image">send_image</string>
-    <string name="cancel_image">Cancel</string>
-    <string name="name_not_valid">Enter full name!</string>
-    <string name="new_password">New password</string>
 
-    <string name="name">"Name"</string>
+    <!-- Repeat password -->
+    <string name="repeat_password">"Powtórz hasło"</string>
+
+    <!-- Message in Alert -->
+    <string name="check_email_restore_password">"Sprawdź email, do którego chcesz odzyskać hasło"</string>
+
+    <!-- Title in Alert -->
+    <string name="restore_password">"Odzyskaj hasło
+"</string>
+
+    <!-- Title in Alert -->
+    <string name="cancel">"Anuluj"</string>
+
+    <!-- Title in Button -->
+    <string name="restore">"Odzyskaj
+"</string>
+
+    <!-- Button title: Wyloguj się -->
+    <string name="log_out">"Wyloguj się"</string>
+    <string name="log_out_message_my">"Czy chcesz się wylogować?"</string>
+    <string name="yes">"Tak"</string>
+    <string name="no">"Nie"</string>
+
+    <!-- Title in menu: Zgłoś problem* - расскажи о проблеме приложения -->
+    <string name="report_a_problem">"Zgłoś problem"</string>
+    <string name="could_not_send_email">"Nie można wysłać email"</string>
+
+    <!-- Message in Alert -->
+    <string name="alert_email_send_fail_message">"Nie można wysłać email.
+Sprawdź konfigurację email i spróbuj ponownie"</string>
+
+    <!-- Subject of an email message -->
+    <string name="report_a_problem_subject">"Zgłoś problem"</string>
+
+    <!-- Default text of an email message -->
+    <string name="report_a_problem_message">"Jaki masz problem ?"</string>
+
+    <!-- Message in Alert -->
+    <string name="restore_password_alert_message">"Wpisz adres e-mail do którego chcesz odzyskać dostęp"</string>
+
+    <!-- Title in cell -->
+    <string name="change_password">"Zmień hasło"</string>
+
+    <!-- Title in cell -->
+    <string name="adres_firmy">"Adres Firmy"</string>
+
+    <!-- Title in cell -->
+    <string name="company_address">"Adres Firmy"</string>
+
+    <!-- TextField in Register -->
+    <string name="name">"Imię"</string>
     <string name="balance_name_of_user">"Nazwa podmiotu"</string>
-    <string name="balance_data_of_user">"Dane podmiotu"</string>
     <string name="balance_my_tax_form">"Moja forma opodatkowania"</string>
     <string name="balance_last_actual_time">"Data ostatniej aktualizacji"</string>
-    <string name="balance_period1">"Okres (do wyboru)"</string>
+    <string name="balance_period">"Okres (do wyboru)"</string>
     <string name="kvartal_1">"Kwartał  I"</string>
     <string name="kvartal_2">"Kwartał  II"</string>
     <string name="kvartal_3">"Kwartał  III"</string>
@@ -95,45 +127,240 @@ REGON: 363655234"</string>
     <string name="balance_cash">"Gotówka"</string>
     <string name="balance_state_bank">"Stan konta bankowego"</string>
     <string name="balance_debts">"Należności"</string>
-    <string name="balance_liability">"Zobowiązania, podatki "</string>
-    <string name="balance_sell">"Sprzedaż "</string>
+    <string name="balance_liability">"Zobowiązania/podatki"</string>
+    <string name="balance_sell">"Sprzedaż"</string>
     <string name="balance_buy">"Zakup"</string>
     <string name="balance_income">"Zysk"</string>
     <string name="balance_add_scan">"PRZYCISK *DODAJ FAKTURĘ ZDJĘCIE/SKAN*"</string>
     <string name="balance_invoice_name">"Nazwa faktury"</string>
-    <string name="balance_date_time">"Data i czas"</string>
+    <string name="balance_date_time">"Data ostatniej aktualizacji"</string>
     <string name="balance_download">"Pobierz"</string>
-    <string name="balance_categoty1">"nal"</string>
-    <string name="balance_categoty2">"ost"</string>
-    <string name="balance_categoty3">"dolg"</string>
-    <string name="balance_categoty4">"tax"</string>
-    <string name="close_privacy">Close</string>
-    <string name="r_u_sure_quit">Are you sure?</string>
-    <string name="change_password">Change password</string>
-    <string name="no_data_about_company">Input company info</string>
-    <string name="balance_balance_section">"Mój bilans"</string>
-    <string name="input_payment_name">"Enter payment name"</string>
-    <string name="please_input_payment_name">"Please, enter payment name!"</string>
-    <string name="pass_changed">"Password was chaged!"</string>
-    <string name="save_image">"Save image"</string>
+    <string name="balance_invoice_history">"Historia faktur"</string>
 
     <!-- menu item -->
     <string name="invoices">"Moje faktury"</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="factures">Factures</string>
-    <string name="acctual_time">Acctual time</string>
-    <string name="company_address">Adres</string>
-    <string name="tax_form">Forma opodatkowania</string>
-    <string name="enter_phone_number">Enter phone number!</string>
-    <string name="no_data_about_company_address">Enter adress of company!</string>
-    <string name="no_data_about_nip">Enter NIP!</string>
-    <string name="no_data_about_regon">Enter REGON!</string>
-    <string name="no_data_about_tax">Enter TAX!</string>
-    <string name="save_changes">Save changes</string>
-    <string name="done">Done!</string>
-    <string name="picture_not_ready">Picture not ready</string>
-    <string name="no_data_about_company_email">Enter company email!</string>
-    <string name="no_data_about_company_phone">Enter company phone</string>
+    <!-- alert button, -->
+    <string name="ok">"Ok"</string>
+
+    <!-- title in alert -->
+    <string name="log_out_title">"Wyloguj się"</string>
+
+    <!-- Message in Alert -->
+    <string name="log_out_message">"Na pewno chchesz się wylogować ?"</string>
+    <string name="balance_balance_section">"Mój bilans"</string>
+    <string name="balance_info_section">"Dane podmiotu"</string>
+    <string name="balance_total_section">"Suma"</string>
+
+    <!-- balance category -->
+    <string name="dolg">"Podatek VAT"</string>
+
+    <!-- balance category -->
+    <string name="nal">"Gotówka"</string>
+
+    <!-- balance category -->
+    <string name="tax">"Podatek dochodowy"</string>
+
+    <!-- balance category -->
+    <string name="ost">"Stan konta bankowego"</string>
+    <string name="tax_type_vat">"VAT"</string>
+    <string name="tax_type_pit">"PIT"</string>
+    <string name="tax_type_ryc">"Ryczałt"</string>
+    <string name="tax_type_kar">"Karta"</string>
+    <string name="tax_type_cit">"CIT"</string>
+
+
+    <string name="mdtp_done_label" msgid="7007948707597430919">"Gotowe"</string>
+    <string name="mdtp_hour_picker_description" msgid="7586639618712934060">"Kołowy suwak godzin"</string>
+    <string name="mdtp_minute_picker_description" msgid="6024811202872705251">"Kołowy suwak minut"</string>
+    <string name="mdtp_select_hours" msgid="7651068754188418859">"Wybierz godziny"</string>
+    <string name="mdtp_select_minutes" msgid="8327182090226828481">"Wybierz minuty"</string>
+    <string name="mdtp_day_picker_description" msgid="3968620852217927702">"Siatka miesięczna z dniami"</string>
+    <string name="mdtp_year_picker_description" msgid="6963340404644587098">"Lista lat"</string>
+    <string name="mdtp_select_day" msgid="3973338219107019769">"Wybierz miesiąc i dzień"</string>
+    <string name="mdtp_select_year" msgid="2603330600102539372">"Wybierz rok"</string>
+    <string name="mdtp_item_is_selected" msgid="2674929164900463786">"Wybrałeś <xliff:g id="ITEM">%1$s</xliff:g>"</string>
+    <string name="mdtp_deleted_key" msgid="6908431551612331381">"<xliff:g id="KEY">%1$s</xliff:g> usunięte"</string>
+
+
+    <!-- field placeholder, registration -->
+    <!-- Fuzzy -->
+    <string name="company_phone">"Telefon Służbowy"</string>
+
+    <!-- field placeholder, registration -->
+    <!-- Fuzzy -->
+    <string name="company_email">"Firmowy Email"</string>
+
+    <!-- alert message -->
+    <!-- Fuzzy -->
+    <string name="email_is_not_valid">"Adres email jest niepoprawny"</string>
+
+    <!-- alert message -->
+    <!-- Fuzzy -->
+    <string name="password_is_not_valid">"Hasło jest niepoprawne"</string>
+
+    <!-- alert message -->
+    <!-- Fuzzy -->
+    <string name="password_should_be">"Hasło musi mieć co najmniej 6 znaków"</string>
+
+    <!-- alert message -->
+    <!-- Fuzzy -->
+    <string name="passwords_are_not_equal">"Hasło jest niepoprawne"</string>
+
+    <!-- alert message -->
+    <!-- Fuzzy -->
+    <string name="first_name_is_not_valid">"Pole \"Imię\" jest niepoprawne"</string>
+    <string name="second_name_is_not_valid">"Pole \"Nazwisko\" jest niepoprawne"</string>
+
+    <!-- alert message -->
+    <!-- Fuzzy -->
+    <string name="first_name_should_not_be_empty">"Pole \"Imię\" nie może być puste"</string>
+
+    <!-- alert message -->
+    <!-- Fuzzy -->
+    <string name="last_name_is_not_valid">"Pole \"Nazwisko\" jest niepoprawne"</string>
+
+    <!-- alert message -->
+    <!-- Fuzzy -->
+    <string name="last_name_should_not_be_empty">"Pole \"Nazwisko\" nie może być puste"</string>
+
+    <!-- alert message -->
+    <!-- Fuzzy -->
+    <string name="user_phone_is_not_valid">"Pole \"Telefon\" jest niepoprawne"</string>
+
+    <!-- alert message -->
+    <!-- Fuzzy -->
+    <string name="phone_should_be">"Telefon np: +48 123 456 789"</string>
+
+    <!-- alert message -->
+    <!-- Fuzzy -->
+    <string name="company_name_is_not_valid">"Pole \"Nazwa firmy\" jest niepoprawne"</string>
+
+    <!-- alert message -->
+    <!-- Fuzzy -->
+    <string name="company_name_should_not_be_empty">"Pole \"Nazwa firmy\" nie może być puste"</string>
+
+    <!-- alert message -->
+    <string name="company_address_should_not_be_empty">"Pole \"Adres firmy\" nie może być puste"</string>
+
+    <!-- alert message -->
+    <!-- Fuzzy -->
+    <string name="nip_should_not_be_empty">"Pole \"NIP\" nie może być puste"</string>
+
+    <!-- alert message -->
+    <!-- Fuzzy -->
+    <string name="regon_should_not_be_empty">"Pole \"REGON\" nie może być puste"</string>
+
+    <!-- alert message -->
+    <!-- Fuzzy -->
+    <string name="company_email_is_not_valid">"Email firmy jest niepoprawny"</string>
+
+    <!-- alert message -->
+    <string name="company_phone_is_not_valid">"Numer służbowy jest niepoprawny"</string>
+
+    <!-- alert title -->
+    <!-- Fuzzy -->
+    <string name="registration_error">"Błąd przy rejestracji
+"</string>
+
+    <!-- alert title -->
+    <!-- Fuzzy -->
+    <string name="login_error">"Niepoprawny email"</string>
+
+    <!-- alert message -->
+    <!-- Fuzzy -->
+    <string name="email_is_ok">"Twój email został wysłany"</string>
+
+    <!-- alert title -->
+    <!-- Fuzzy -->
+    <string name="recovery_status">"Status wznowienia"</string>
+
+    <!-- Fuzzy -->
+    <string name="button_nav_expand">"Rozwinąć"</string>
+
+    <!-- button title -->
+    <!-- Fuzzy -->
+    <!-- button title -->
+    <!-- Fuzzy -->
+    <string name="change_period">"Wybierz okres"</string>
+    <string name="email_for_notifications">"fiskasapp@gmail.com"</string>
+
+    <!-- label -->
+    <string name="period_date_from">"od"</string>
+
+    <!-- label -->
+    <string name="period_date_to">"do"</string>
+    <string name="balance_table_quarter_1">"Kwartał 1"</string>
+    <string name="balance_table_quarter_2">"Kwartał 2"</string>
+    <string name="balance_table_quarter_3">"Kwartał 3"</string>
+    <string name="balance_table_quarter_4">"Kwartał 4"</string>
+    <string name="balance_table_month_1">"Styczeń"</string>
+    <string name="balance_table_month_2">"Luty"</string>
+    <string name="balance_table_month_3">"Marzec"</string>
+    <string name="balance_table_month_4">"Kwiecień"</string>
+    <string name="balance_table_month_5">"Maj"</string>
+    <string name="balance_table_month_6">"Czerwiec"</string>
+    <string name="balance_table_month_7">"Lipiec"</string>
+    <string name="balance_table_month_8">"Sierpień"</string>
+    <string name="balance_table_month_9">"Wrzesień"</string>
+    <string name="balance_table_month_10">"Pażdziernik"</string>
+    <string name="balance_table_month_11">"Listopad"</string>
+    <string name="balance_table_month_12">"Grudzień"</string>
+    <string name="balance_table_undefined_cell">"Nieokreślone pole"</string>
+    <string name="balance_actualization_pending">"Ładuje się"</string>
+    <string name="invoice_saved_ok_title">"Zapisane"</string>
+    <string name="invoice_saved_ok_message">"Twoja faktura została zapisana do galerii"</string>
+    <string name="invoice_saved_error_title">"Błąd. Spróbuj ponownie"</string>
+    <string name="invoice_button_save">"Zapisz"</string>
+    <string name="profile_change_field_title">"Zmeń"</string>
+    <string name="profile_change_field_message">"Wpisz nowe dane"</string>
+    <string name="profile_change_word">"Zmień"</string>
+    <string name="profile_update_values">"Twoje dane zostały zapisane"</string>
+    <string name="password_current">"Wpisz obecne hasło "</string>
+    <string name="password_new">"Nowe hasło"</string>
+    <string name="password_new_repeat">"Powtórz hasło"</string>
+    <string name="email_is_valid">"Twój email jest poprawny"</string>
+    <string name="phone_is_valid">"Twój telefon jest poprawny"</string>
+    <string name="phone_is_not_valid">"Twój telefon jest niepoprawny"</string>
+    <string name="password_current_is_not_valid">"Twoje obecne hasło jest niepoprawne"</string>
+    <string name="password_current_is_not_match">Pole hasło jest niepoprawne""</string>
+    <string name="password_new_is_not_valid">"Twoje nowe hasło jest niepoprawne"</string>
+    <string name="password_repeated_is_not_valid">"Powtórz nowe hasło"</string>
+    <string name="passwords_are_validated">"Your passwords are validated"</string>
+    <string name="photo_button_accept">"Ok"</string>
+    <string name="photo_button_cancel">"Anuluj"</string>
+    <string name="photo_send_alert_title">"Status zdjęcia"</string>
+    <string name="photo_send_alert_message">"Zdjęcie jest zatwierdzone"</string>
+    <string name="photo_send_alert_image_name">"Wpisz nazwę"</string>
+    <string name="photo_send_button_send">"Wysłać"</string>
+    <string name="photo_send_button_delete">"Usunąć"</string>
+    <string name="photo_send_status_ok_title">"Dziękujemy!"</string>
+    <string name="photo_send_status_ok_message">"Zdjęcie zostało wysłane"</string>
+    <string name="profile_changed">Dane zostały zapisane</string>
+    <string name="year"> Rok</string>
+    <string name="day">\u0020 Dzień</string>
+    <string name="days">\u0020 Dni</string>dni
+    <string name="month"> Miesiąc</string>
+    <string name="tax_service_sould_not_be_empty">Forma opodatkowania niepoprawna</string>
+
+    <string name="duration">Trwanie:\u0020</string>
+
+
+    <!--Request Permission-->
+    <string name="permission_info">Aplikacja wymaga uprawnień do zapisu, aby przeglądać obrazy. </string>
+    <string name="permission_force"> Aplikacja wymaga uprawnień do magazynu, aby przeglądać obrazy. Stuknij Ustawienia i przejdź do Uprawnienia, aby udzielić pozwolenia. </string>
+    <string name="permission_ok">OK</string>
+    <string name="permission_settings">Ustawienia</string>
+    <string name="permission_package">pakiet </string>
+
+    <string name="album_view">Wybierz album ze zdjęciami</string>
+    <string name="image_view">Naciśnij, aby wybrać obrazy</string>
+
+    <string name="selected">selected</string>
+    <string name="limit_exceeded">Można wybrać maksymalnie% d obrazów</string>
+    <string name="error_null_cursor">Ups, coś poszło nie tak! </string>
+    <string name="add">ADD</string>
+    <string name="capture_photo">Capture Photo</string>
+    <string name="error_loadind">Ładowanie błędu obrazu.</string>
+
 </resources>

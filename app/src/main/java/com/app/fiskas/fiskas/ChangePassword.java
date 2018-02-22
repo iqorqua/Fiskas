@@ -89,7 +89,7 @@ public class ChangePassword extends AppCompatActivity {
             public void onClick(View view) {
                 if (!((new_pass.getText().toString().equals(new_pass1.getText().toString()))& (new_pass.getText().toString().length()>5))){
 
-                    Snackbar.make(view, R.string.pass_missmatch, Snackbar.LENGTH_LONG)
+                    Snackbar.make(view, R.string.password_current_is_not_match, Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();
                     return;
                 }
@@ -111,7 +111,7 @@ public class ChangePassword extends AppCompatActivity {
                                     .addFormDataPart("pass", pass.getText().toString())
                                     .addFormDataPart("new_pass", new_pass.getText().toString())
                                     .build();
-                            request = new Request.Builder().url("https://serwer1651270.home.pl/admin/api/set_pass").post(requestBody).build();
+                            request = new Request.Builder().url("http://fiskasapp.unixstorm.org/admin/api/set_pass").post(requestBody).build();
                             Response response = client.newCall(request).execute();
                             JSON json = new JSON(response.body().string());
                             if(json.key("res").intValue() == 0){
@@ -120,7 +120,7 @@ public class ChangePassword extends AppCompatActivity {
                                 Intent intent = new Intent(getBaseContext(), LoginActivity.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                 startActivityForResult(intent, 1);
-                                Snackbar.make(getWindow().getDecorView(), R.string.pass_changed, Snackbar.LENGTH_LONG)
+                                Snackbar.make(getWindow().getDecorView(), R.string.restore_password_alert_message, Snackbar.LENGTH_LONG)
                                         .setAction("Action", null).show();
                             }
                             else {

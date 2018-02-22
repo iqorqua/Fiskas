@@ -54,8 +54,6 @@ public class CameraActivity extends AppCompatActivity {
         @Override
         public void onPictureTaken(CameraView cameraView, final byte[] data) {
             Log.d(TAG, "onPictureTaken " + data.length);
-            Toast.makeText(cameraView.getContext(), "Gotted pic", Toast.LENGTH_SHORT)
-                    .show();
             getBackgroundHandler().post(new Runnable() {
                 @Override
                 public void run() {
@@ -97,6 +95,9 @@ public class CameraActivity extends AppCompatActivity {
                 .onRationale(this::permissionRationaleMulti)
                 .onResult(this::permissionResultMulti) 
                 .check();
+        findViewById(R.id.record_panel_activity).bringToFront();
+        findViewById(R.id.record_panel_activity).setVisibility(View.VISIBLE);
+        findViewById(R.id.btn_select_photo_concamera).setVisibility(View.VISIBLE);
         findViewById(R.id.txt_close_camera).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -135,6 +136,12 @@ public class CameraActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+        mCameraView.start();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
         mCameraView.start();
     }
 
@@ -181,6 +188,17 @@ public class CameraActivity extends AppCompatActivity {
             }
 
         }
+        else {
+        }
+        if (mBackgroundHandler != null) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
+                mBackgroundHandler.getLooper().quitSafely();
+            } else {
+                mBackgroundHandler.getLooper().quit();
+            }
+            mBackgroundHandler = null;
+        }
+        finish();
     }
 
 }

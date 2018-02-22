@@ -1,17 +1,19 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:custom="http://schemas.android.com/apk/res-auto"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:fancy="http://schemas.android.com/apk/res-auto"
     tools:context=".PaymentList">
 
     <!-- TODO: Update blank fragment layout -->
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -25,13 +27,20 @@
                 android:layout_marginBottom="5dp"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/tw_info_balance"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="-20dp"
-                    android:background="@color/colorAccent"
-                    android:text="@string/balance_data_of_user" />
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tw_info_balance"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="-20dp"
+                        android:background="@color/colorAccent"
+                        android:text="@string/balance_info_section"
+                        android:textColor="@color/bootstrap_brand_secondary_fill"
+                        android:textStyle="bold" />
+                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -146,16 +155,6 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/txt_date_label_explain"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left|center"
-                        android:gravity="left"
-                        android:text="@string/balance_period1"
-                        android:textColor="@android:color/black"
-                        android:textSize="12sp" />
-
-                    <TextView
                         android:id="@+id/txt_edit_date2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -163,7 +162,8 @@
                         android:gravity="center"
                         android:text="2018"
                         android:textColor="@android:color/black"
-                        android:textSize="18sp" />
+                        android:textSize="18sp"
+                        android:visibility="gone" />
 
                     <TextView
                         android:id="@+id/tw_info_balance2"
@@ -171,11 +171,14 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="-20dp"
                         android:background="@color/colorAccent"
-                        android:text="@string/balance_balance_section" />
+                        android:text="@string/balance_balance_section"
+                        android:textColor="@color/bootstrap_brand_secondary_fill"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/list_treenode"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
@@ -198,7 +201,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:gravity="center_horizontal"
-                                android:text="@string/acctual_time" />
+                                android:text="@string/balance_last_actual_time" />
 
                             <Button
                                 android:id="@+id/btn_payment_refresh"
@@ -226,7 +229,7 @@
                                 android:layout_marginRight="50dp"
                                 android:elevation="4dp"
                                 android:gravity="right"
-                                android:text="0$"
+                                android:text="0zł"
                                 android:textColor="@color/level_default" />
 
                             <LinearLayout
@@ -247,7 +250,7 @@
                                     android:elevation="1dp"
                                     android:gravity="left|center_vertical"
                                     android:tag="nal"
-                                    android:text="@string/balance_categoty1" />
+                                    android:text="@string/nal" />
                             </LinearLayout>
 
                         </RelativeLayout>
@@ -283,7 +286,7 @@
                                 android:layout_marginRight="50dp"
                                 android:elevation="4dp"
                                 android:gravity="right"
-                                android:text="0$"
+                                android:text="0zł"
                                 android:textColor="@color/level_default" />
 
                             <LinearLayout
@@ -299,7 +302,7 @@
                                     android:drawableRight="@mipmap/ic_add_black_24dp"
                                     android:gravity="left|center_vertical"
                                     android:tag="ost"
-                                    android:text="@string/balance_categoty2" />
+                                    android:text="@string/ost" />
                             </LinearLayout>
 
                         </RelativeLayout>
@@ -334,7 +337,7 @@
                                 android:layout_marginRight="50dp"
                                 android:elevation="4dp"
                                 android:gravity="right"
-                                android:text="0$"
+                                android:text="0zł"
                                 android:textColor="@color/level_default" />
 
                             <LinearLayout
@@ -350,7 +353,7 @@
                                     android:drawableRight="@mipmap/ic_add_black_24dp"
                                     android:gravity="left|center_vertical"
                                     android:tag="dolg"
-                                    android:text="@string/balance_categoty3" />
+                                    android:text="@string/dolg" />
                             </LinearLayout>
 
                         </RelativeLayout>
@@ -385,7 +388,7 @@
                                 android:layout_marginRight="50dp"
                                 android:elevation="4dp"
                                 android:gravity="right"
-                                android:text="0$"
+                                android:text="0zł"
                                 android:textColor="@color/level_default" />
 
                             <LinearLayout
@@ -401,7 +404,7 @@
                                     android:drawableRight="@mipmap/ic_add_black_24dp"
                                     android:gravity="left|center_vertical"
                                     android:tag="tax"
-                                    android:text="@string/balance_categoty4" />
+                                    android:text="@string/tax" />
                             </LinearLayout>
 
                         </RelativeLayout>
@@ -422,24 +425,38 @@
                         </com.github.chuross.library.ExpandableLayout>
                     </LinearLayout>
 
+                    <TextView
+                        android:id="@+id/txt_date_label_explain"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left|center"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:paddingTop="10dp"
+                        android:text="@string/balance_period"
+                        android:textColor="@android:color/black"
+                        android:textSize="12sp" />
+
                     <mehdi.sakout.fancybuttons.FancyButton
                         android:id="@+id/btn_balance_change_attr"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_margin="20dp"
                         android:layout_weight="1"
                         android:paddingBottom="10dp"
                         android:paddingLeft="20dp"
                         android:paddingRight="20dp"
                         android:paddingTop="10dp"
-                        custom:fb_text="Change"
+                        custom:fb_text="@string/change_period"
                         fancy:fb_borderColor="#FFFFFF"
                         fancy:fb_borderWidth="1dp"
                         fancy:fb_defaultColor="@color/colorPrimary"
                         fancy:fb_focusColor="@color/colorPrimaryDark"
                         fancy:fb_iconPosition="left"
                         fancy:fb_radius="30dp"
-                        fancy:fb_textColor="#FFFFFF" />
+                        fancy:fb_textColor="#FFFFFF">
+
+
+                    </mehdi.sakout.fancybuttons.FancyButton>
 
                 </LinearLayout>
 
@@ -457,7 +474,6 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
                     android:orientation="vertical"
                     android:visibility="visible">
 
@@ -474,6 +490,7 @@
                             android:text="@string/balance_sell"
                             android:textColor="@android:color/black"
                             android:textSize="18sp"
+                            android:textStyle="bold"
                             android:visibility="visible" />
 
                         <TextView
@@ -482,9 +499,10 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="right"
-                            android:text="100$"
+                            android:text="0zł"
                             android:textColor="@android:color/black"
                             android:textSize="18sp"
+                            android:textStyle="bold"
                             android:visibility="visible" />
 
                     </LinearLayout>
@@ -503,6 +521,7 @@
                             android:text="@string/balance_buy"
                             android:textColor="@android:color/black"
                             android:textSize="18sp"
+                            android:textStyle="bold"
                             android:visibility="visible" />
 
                         <TextView
@@ -511,9 +530,10 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="right"
-                            android:text="100$"
+                            android:text="0zł"
                             android:textColor="@android:color/black"
                             android:textSize="18sp"
+                            android:textStyle="bold"
                             android:visibility="visible" />
                     </LinearLayout>
 
@@ -530,6 +550,7 @@
                             android:text="@string/balance_income"
                             android:textColor="@android:color/black"
                             android:textSize="18sp"
+                            android:textStyle="bold"
                             android:visibility="visible" />
 
                         <TextView
@@ -538,9 +559,10 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="right"
-                            android:text="100$"
+                            android:text="0zł"
                             android:textColor="@android:color/black"
                             android:textSize="18sp"
+                            android:textStyle="bold"
                             android:visibility="visible" />
 
                     </LinearLayout>
@@ -549,21 +571,19 @@
                         android:id="@+id/btn_balance_make_photo"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="20dp"
                         android:layout_weight="1"
                         android:paddingBottom="10dp"
                         android:paddingLeft="20dp"
                         android:paddingRight="20dp"
                         android:paddingTop="10dp"
                         android:visibility="visible"
+                        custom:fb_defaultColor="@android:color/holo_blue_dark"
+                        custom:fb_focusColor="@android:color/holo_blue_bright"
                         custom:fb_text="@string/make_photo"
                         fancy:fb_borderColor="#FFFFFF"
                         fancy:fb_borderWidth="1dp"
-                        fancy:fb_defaultColor="@color/colorPrimary"
-                        fancy:fb_focusColor="@color/colorPrimaryDark"
                         fancy:fb_iconPosition="left"
-                        fancy:fb_radius="30dp"
-                        fancy:fb_textColor="#FFFFFF" />
+                        fancy:fb_radius="30dp" />
 
                 </LinearLayout>
             </LinearLayout>
