@@ -28,6 +28,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.ArrayList;
+import java.util.UUID;
 
 import in.myinnos.awesomeimagepicker.activities.AlbumSelectActivity;
 import in.myinnos.awesomeimagepicker.helpers.ConstantsCustomGallery;
@@ -58,7 +59,8 @@ public class CameraActivity extends AppCompatActivity {
                 @Override
                 public void run() {
                     File file = new File(getExternalFilesDir(Environment.DIRECTORY_PICTURES),
-                            "picture.jpg");
+                            UUID.randomUUID().toString() + ".jpg");
+                    file.deleteOnExit();
                     OutputStream os = null;
                     try {
                         os = new FileOutputStream(file);

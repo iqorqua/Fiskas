@@ -18,6 +18,8 @@ import android.widget.ImageView;
 
 import com.bluehomestudio.progresswindow.ProgressWindow;
 import com.bluehomestudio.progresswindow.ProgressWindowConfiguration;
+import com.koushikdutta.async.future.FutureCallback;
+import com.koushikdutta.ion.Ion;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 import com.thanosfisherman.mayi.Mayi;
@@ -39,14 +41,54 @@ public class ShowImageActivity extends HelperActivity {
     public final static String APP_PATH_SD_CARD = "/DesiredSubfolderName/";
     public final static String APP_THUMBNAIL_PATH_SD_CARD = "thumbnails";
     Bitmap bitmap = null;
-    private ProgressWindow progressWindow;
+    ProgressWindow progressWindow;
+    ImageView previewImage;
+    String previewFilePath;
+    String previewFileDate;
+    String previewFileName;
 
     @Override
-    protected void onDestroy()
-    {
+    protected void onDestroy() {
+        progressWindow.hideProgress();
         super.onDestroy();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
         progressWindow.hideProgress();
     }
+
+    @Override
+    protected void onStart(){
+        super.onStart();
+        progressWindow.showProgress();
+        try {
+            Ion.with(this)
+                    .load(previewFilePath)
+                    .progressDialog(new ProgressDialog(this))
+                    .withBitmap()
+                    .asBitmap()
+                    .setCallback(new FutureCallback<Bitmap>() {
+                        @Override
+                        public void onCompleted(Exception e, Bitmap result) {
+                            previewImage.setImageBitmap(result);
+                            progressWindow.hideProgress();
+                            bitmap = result;
+                        }
+                    });
+        }
+        catch (Exception ex){
+            ex.printStackTrace();
+            finish();
+        }
+        ;
+        /*ImageViewFuture ion = Ion.with(previewImage)
+                .centerCrop()
+                .error(R.drawable.error)
+                .load(previewFilePath);*/
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,39 +99,13 @@ public class ShowImageActivity extends HelperActivity {
                 .onResult(this::permissionResultMulti)
                 .check();
 
-        ImageView previewImage = (ImageView) findViewById(R.id.image_view_preview);
+        previewImage = (ImageView) findViewById(R.id.image_view_preview);
 
         Bundle args = getIntent().getExtras();
-        String previewFilePath = args.get("image_link").toString();
-        String previewFileDate = args.get("image_date").toString();
-        String previewFileName = args.get("image_name").toString();
+        previewFilePath = args.get("image_link").toString();
+        previewFileDate = args.get("image_date").toString();
+        previewFileName = args.get("image_name").toString();
         progressConfigurations();
-        progressWindow.showProgress();
-        try {
-            Picasso.with(this).load(previewFilePath).fit().centerInside().into(previewImage, new Callback() {
-                @Override
-                public void onSuccess() {
-                    progressWindow.hideProgress();
-                }
-
-                @Override
-                public void onError() {
-                    previewImage.setImageResource(R.drawable.error);
-                    progressWindow.hideProgress();
-                    Snackbar.make((ImageView) findViewById(R.id.image_view_preview), R.string.error_loadind, Snackbar.LENGTH_LONG)
-                            .setAction("Action", null).show();
-                }
-            });
-        }
-        catch (Exception ex){
-            ex.printStackTrace();
-            finish();
-        }
-            ;
-        /*ImageViewFuture ion = Ion.with(previewImage)
-                .centerCrop()
-                .error(R.drawable.error)
-                .load(previewFilePath);*/
 
         findViewById(R.id.btn_preview_close).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -106,10 +122,9 @@ public class ShowImageActivity extends HelperActivity {
                 pd.setTitle("Wait...");
                 pd.setMessage("Loading...");
                 try {
-                    MediaStore.Images.Media.insertImage(getContentResolver(), ((BitmapDrawable) previewImage.getDrawable()).getBitmap(), previewFileName+".jpeg", previewFileDate);
-                    SaveAndShare.save(ShowImageActivity.this, ((BitmapDrawable) previewImage.getDrawable()).getBitmap(), previewFileName, previewFileDate, previewFilePath);
-                    bitmap = ((BitmapDrawable) previewImage.getDrawable()).getBitmap();
                     if (bitmap != null){
+                    MediaStore.Images.Media.insertImage(getContentResolver(), bitmap, previewFileName+".jpeg", previewFileDate);
+                    SaveAndShare.save(ShowImageActivity.this, bitmap, previewFileName, previewFileDate, previewFilePath);
                         saveToInternalStorage(bitmap);
                         finish();
                     }
@@ -160,7 +175,7 @@ public class ShowImageActivity extends HelperActivity {
 
 
     private void progressConfigurations(){
-        progressWindow = ProgressWindow.getInstance(this);
+        progressWindow = ProgressWindow.getInstance(previewImage.getContext());
         ProgressWindowConfiguration progressWindowConfiguration = new ProgressWindowConfiguration();
         progressWindowConfiguration.backgroundColor = Color.parseColor("#32000000") ;
         progressWindowConfiguration.progressColor = Color.WHITE ;

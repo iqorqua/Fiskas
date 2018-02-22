@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.app.fiskas.fiskas.LoginActivity;
 import com.app.fiskas.fiskas.R;
 import com.app.fiskas.fiskas.ShowImageActivity;
+import com.koushikdutta.ion.Ion;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -59,16 +60,16 @@ public class FacturesAdapter extends BaseAdapter {
         ((TextView)view.findViewById(R.id.txt_facute_item_name)).setText(item.factureName);
         ((TextView)view.findViewById(R.id.txt_facute_item_date)).setText(item.factureDate);
         ((LinearLayout)view.findViewById(R.id.facture_item_lo)).setTag(item.factureLink);
-        Picasso.with(context).load(item.factureLink)
+        /*Picasso.with(context).load(item.factureLink)
                 .resize(100, 100)
                 .error(R.drawable.error)
                 .onlyScaleDown()
-                .into((ImageView)view.findViewById(R.id.image_facture_item));
-        /*Ion.with((ImageView)view.findViewById(R.id.image_facture_item))
+                .into((ImageView)view.findViewById(R.id.image_facture_item));*/
+        Ion.with((ImageView)view.findViewById(R.id.image_facture_item))
                 .centerCrop()
                 .resize(50,50)
                 .error(R.drawable.error)
-                .load(item.factureLink);*/
+                .load(item.factureLink);
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

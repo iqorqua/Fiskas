@@ -1,5 +1,6 @@
 package com.app.fiskas.fiskas;
 
+import android.Manifest;
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.support.design.widget.Snackbar;
@@ -13,6 +14,9 @@ import android.widget.Toast;
 
 import com.koushikdutta.ion.Ion;
 import com.squareup.picasso.Picasso;
+import com.thanosfisherman.mayi.Mayi;
+import com.thanosfisherman.mayi.PermissionBean;
+import com.thanosfisherman.mayi.PermissionToken;
 
 import java.io.File;
 import java.io.IOException;
@@ -41,6 +45,12 @@ public class PhotoResultSend extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_photo_result_send);
+        Mayi.withActivity(this)
+                .withPermissions(Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.MEDIA_CONTENT_CONTROL, Manifest.permission.RECORD_AUDIO, Manifest.permission.INTERNET, Manifest.permission.ACCESS_NETWORK_STATE)
+                .onRationale(this::permissionRationaleMulti)
+                .onResult(this::permissionResultMulti)
+                .check();
+
 
         final ProgressDialog pd = new ProgressDialog(PhotoResultSend.this);
         pd.setCancelable(false);
@@ -136,6 +146,17 @@ public class PhotoResultSend extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    private void permissionResultMulti(PermissionBean[] permissions)
+    {
+        //Toast.makeText(MainActivity.this, "MULTI PERMISSION RESULT " + Arrays.deepToString(permissions), Toast.LENGTH_LONG).show();
+    }
+
+    private void permissionRationaleMulti(PermissionBean[] permissions, PermissionToken token)
+    {
+        //Toast.makeText(MainActivity.this, "Rationales for Multiple Permissions " + Arrays.deepToString(permissions), Toast.LENGTH_LONG).show();
+        token.continuePermissionRequest();
     }
 }
 
