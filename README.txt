@@ -1,1 +1,1 @@
-1:Please, give developers their sallary for this app!
+0:Please, give developers their sallary for this app!
